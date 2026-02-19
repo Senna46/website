@@ -1,6 +1,6 @@
-<!-- Contact page: displays email contact cards for research and development. -->
+<!-- Contact page: displays email contact cards with copy-to-clipboard. -->
 <script lang="ts">
-	import { Mail, GraduationCap, Code } from '@lucide/svelte';
+	import { Mail, GraduationCap, Code, Copy, Check } from '@lucide/svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { contacts } from '$lib/data/contact.js';
@@ -9,6 +9,21 @@
 		research: GraduationCap,
 		develop: Code
 	};
+
+	let copiedId = $state<string | null>(null);
+
+	async function copyEmail(contactId: string, email: string) {
+		try {
+			await navigator.clipboard.writeText(email);
+			copiedId = contactId;
+			setTimeout(() => {
+				copiedId = null;
+			}, 2000);
+		} catch (error) {
+			const errorMessage = error instanceof Error ? error.message : String(error);
+			console.error(`Failed to copy email for contact "${contactId}": ${errorMessage}`);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -37,7 +52,22 @@
 				</Card.Header>
 				<Card.Content class="flex-1">
 					<p class="text-muted-foreground text-sm">{contact.description}</p>
-					<p class="mt-3 font-mono text-sm">{contact.email}</p>
+					<div class="bg-muted/50 mt-3 flex items-center justify-between rounded-md border px-3 py-2">
+						<span class="font-mono text-sm">{contact.email}</span>
+						<Button
+							variant="ghost"
+							size="icon"
+							class="h-8 w-8 shrink-0"
+							onclick={() => copyEmail(contact.id, contact.email)}
+							aria-label="Copy email address"
+						>
+							{#if copiedId === contact.id}
+								<Check class="h-4 w-4 text-green-500" />
+							{:else}
+								<Copy class="h-4 w-4" />
+							{/if}
+						</Button>
+					</div>
 				</Card.Content>
 				<Card.Footer>
 					<Button
