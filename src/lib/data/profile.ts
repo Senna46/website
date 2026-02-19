@@ -9,6 +9,7 @@ export const profile = {
 		reading: 'おおむら せな'
 	},
 	roles: [
+		'Sheliak Lab 代表',
 		'Lead Developer, CauchyE, Inc.',
 		'Core Developer, Sunrise',
 		'Core Developer, D6E-AI',
