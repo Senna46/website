@@ -1,25 +1,25 @@
-<!-- Home page: profile hero, career timeline, research, performance summary,
-     open source projects, and programming skills. -->
+<!-- Home page: profile hero, career timeline, about, projects highlight,
+     performance summary, and programming skills. -->
 <script lang="ts">
-	import { ArrowRight, ExternalLink, Github } from '@lucide/svelte';
+	import { ArrowRight, Github } from '@lucide/svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
-	import {
-		profile,
-		history,
-		research,
-		openSourceProjects,
-		programmingSkills,
-		socialLinks
-	} from '$lib/data/profile.js';
+	import { profile, history, research, programmingSkills, socialLinks } from '$lib/data/profile.js';
 	import { performanceSummary } from '$lib/data/performance.js';
+	import { projects } from '$lib/data/projects.js';
 </script>
 
 <svelte:head>
 	<title>大村瀬奈 (OHMURA Senna) - Official Website</title>
-	<meta name="description" content="大村瀬奈 OHMURA Senna 公式ホームページ。ブロックチェーン・AI開発エンジニア。" />
+	<meta
+		name="description"
+		content="大村瀬奈 OHMURA Senna 公式ホームページ。ブロックチェーン・AI開発エンジニア。"
+	/>
+	<meta property="og:title" content="大村瀬奈 (OHMURA Senna) - Official Website" />
+	<meta property="og:description" content="ブロックチェーン・AI開発エンジニア。Sunrise Core Developer, CauchyE Lead Developer." />
+	<meta property="og:url" content="https://senna46.com/" />
 </svelte:head>
 
 <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
@@ -56,27 +56,9 @@
 
 	<Separator class="my-12" />
 
-	<!-- History / Timeline -->
+	<!-- About -->
 	<section>
-		<h2 class="mb-8 text-2xl font-bold tracking-tight">History</h2>
-		<div class="relative ml-4 border-l-2 border-border pl-8">
-			{#each history as entry, i}
-				<div class="relative mb-6 last:mb-0">
-					<div
-						class="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background"
-					></div>
-					<p class="text-sm font-semibold text-primary">{entry.date}</p>
-					<p class="text-foreground mt-0.5">{entry.description}</p>
-				</div>
-			{/each}
-		</div>
-	</section>
-
-	<Separator class="my-12" />
-
-	<!-- Research -->
-	<section>
-		<h2 class="mb-6 text-2xl font-bold tracking-tight">Research</h2>
+		<h2 class="mb-6 text-2xl font-bold tracking-tight">About</h2>
 		<Card.Root>
 			<Card.Content class="pt-6">
 				<div class="space-y-3">
@@ -86,6 +68,56 @@
 				</div>
 			</Card.Content>
 		</Card.Root>
+	</section>
+
+	<Separator class="my-12" />
+
+	<!-- Projects -->
+	<section>
+		<h2 class="mb-6 text-2xl font-bold tracking-tight">Projects</h2>
+		<div class="grid gap-4 sm:grid-cols-3">
+			{#each projects as project}
+				<a href="/projects#{project.id}" class="block">
+					<Card.Root class="hover:bg-muted/50 h-full transition-colors">
+						<Card.Header>
+							<Card.Title>{project.name}</Card.Title>
+							<Card.Description>{project.description}</Card.Description>
+						</Card.Header>
+						<Card.Content>
+							<div class="flex flex-wrap gap-1">
+								{#each project.tags.slice(0, 3) as tag}
+									<Badge variant="outline" class="text-xs">{tag}</Badge>
+								{/each}
+							</div>
+						</Card.Content>
+					</Card.Root>
+				</a>
+			{/each}
+		</div>
+		<div class="mt-4">
+			<Button variant="outline" href="/projects">
+				View All
+				<ArrowRight class="ml-2 h-4 w-4" />
+			</Button>
+		</div>
+	</section>
+
+	<Separator class="my-12" />
+
+	<!-- History / Timeline -->
+	<section>
+		<h2 class="mb-8 text-2xl font-bold tracking-tight">History</h2>
+		<div class="relative ml-4 border-l-2 border-border pl-8">
+			{#each history as entry}
+				<div class="relative mb-6 last:mb-0">
+					<div
+						class="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background"
+					></div>
+					<p class="text-sm font-semibold text-primary">{entry.date}</p>
+					<p class="text-foreground mt-0.5">{entry.description}</p>
+				</div>
+			{/each}
+		</div>
 	</section>
 
 	<Separator class="my-12" />
@@ -111,24 +143,6 @@
 				</Button>
 			</Card.Footer>
 		</Card.Root>
-	</section>
-
-	<Separator class="my-12" />
-
-	<!-- Open Source -->
-	<section>
-		<h2 class="mb-6 text-2xl font-bold tracking-tight">Open Source</h2>
-		<div class="flex flex-wrap gap-2">
-			{#each openSourceProjects as project}
-				<a href={project.url} target="_blank" rel="noopener noreferrer">
-					<Badge variant="secondary" class="cursor-pointer gap-1.5 px-3 py-1.5 text-sm">
-						<Github class="h-3.5 w-3.5" />
-						{project.name}
-						<ExternalLink class="h-3 w-3 opacity-50" />
-					</Badge>
-				</a>
-			{/each}
-		</div>
 	</section>
 
 	<Separator class="my-12" />

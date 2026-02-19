@@ -5,6 +5,7 @@ const siteUrl = 'https://senna46.com';
 
 const pages = [
 	{ path: '/', priority: '1.0' },
+	{ path: '/projects', priority: '0.9' },
 	{ path: '/performance', priority: '0.8' },
 	{ path: '/contact', priority: '0.7' }
 ];

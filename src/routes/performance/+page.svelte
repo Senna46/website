@@ -24,8 +24,11 @@
 	<title>Performance - OHMURA Senna</title>
 	<meta
 		name="description"
-		content="大村瀬奈の研究業績・学会発表。日銀グランプリ、SFERS 2019、UBRI Connect 2021。"
+		content="大村瀬奈の研究業績・学会発表。Sunrise mainnet launch, 日銀グランプリ、SFERS 2019、UBRI Connect 2021。"
 	/>
+	<meta property="og:title" content="Performance - OHMURA Senna" />
+	<meta property="og:description" content="Research achievements: Sunrise blockchain launch, BOJ Grand Prix, SFERS 2019, UBRI Connect 2021." />
+	<meta property="og:url" content="https://senna46.com/performance" />
 </svelte:head>
 
 <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">

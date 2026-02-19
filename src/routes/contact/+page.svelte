@@ -29,6 +29,9 @@
 <svelte:head>
 	<title>Contact - OHMURA Senna</title>
 	<meta name="description" content="大村瀬奈へのお問い合わせ。研究・ブロックチェーン開発に関するご連絡。" />
+	<meta property="og:title" content="Contact - OHMURA Senna" />
+	<meta property="og:description" content="Contact OHMURA Senna for research or blockchain/AI development inquiries." />
+	<meta property="og:url" content="https://senna46.com/contact" />
 </svelte:head>
 
 <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
