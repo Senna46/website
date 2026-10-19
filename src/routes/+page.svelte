@@ -124,10 +124,10 @@
 								href={entry.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-foreground inline-flex items-center gap-1 underline-offset-4 hover:underline"
+								class="text-foreground underline-offset-4 hover:underline"
 							>
 								{entry.description}
-								<ExternalLink class="h-3.5 w-3.5 shrink-0" />
+								<ExternalLink class="inline-block h-3.5 w-3.5 align-middle" />
 							</a>
 						</p>
 					{:else}
