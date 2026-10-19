@@ -52,7 +52,7 @@
 
 	<div class="space-y-12">
 		{#each projects as project}
-			<section>
+			<section id={project.id} class="scroll-mt-24">
 				<div class="mb-4 flex flex-wrap items-center gap-3">
 					<h2 class="text-2xl font-bold tracking-tight">{project.name}</h2>
 					<div class="flex flex-wrap gap-1.5">

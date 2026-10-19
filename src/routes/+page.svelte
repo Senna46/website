@@ -1,7 +1,7 @@
 <!-- Home page: profile hero, career timeline, about, projects highlight,
      performance summary, and programming skills. -->
 <script lang="ts">
-	import { ArrowRight, Github } from '@lucide/svelte';
+	import { ArrowRight, ExternalLink, Github, Linkedin } from '@lucide/svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -18,7 +18,7 @@
 		content="大村瀬奈 OHMURA Senna 公式ホームページ。ブロックチェーン・AI開発エンジニア。"
 	/>
 	<meta property="og:title" content="大村瀬奈 (OHMURA Senna) - Official Website" />
-	<meta property="og:description" content="ブロックチェーン・AI開発エンジニア。Sunrise Core Developer, CauchyE Lead Developer." />
+	<meta property="og:description" content="ブロックチェーン・AI開発エンジニア。Sunrise / D6E-AI Core Developer, CAUCHYE ASIA Lead Developer." />
 	<meta property="og:url" content="https://senna46.com/" />
 </svelte:head>
 
@@ -46,6 +46,10 @@
 				<Button variant="outline" size="sm" href={socialLinks.github} target="_blank">
 					<Github class="mr-2 h-4 w-4" />
 					GitHub
+				</Button>
+				<Button variant="outline" size="sm" href={socialLinks.linkedin} target="_blank">
+					<Linkedin class="mr-2 h-4 w-4" />
+					LinkedIn
 				</Button>
 				<Button variant="outline" size="sm" href="/contact">
 					Contact
@@ -114,7 +118,21 @@
 						class="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background"
 					></div>
 					<p class="text-sm font-semibold text-primary">{entry.date}</p>
-					<p class="text-foreground mt-0.5">{entry.description}</p>
+					{#if entry.url}
+						<p class="mt-0.5">
+							<a
+								href={entry.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-foreground underline-offset-4 hover:underline"
+							>
+								{entry.description}
+								<ExternalLink class="inline-block h-3.5 w-3.5 align-middle" />
+							</a>
+						</p>
+					{:else}
+						<p class="text-foreground mt-0.5">{entry.description}</p>
+					{/if}
 				</div>
 			{/each}
 		</div>

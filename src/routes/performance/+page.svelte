@@ -1,4 +1,4 @@
-<!-- Performance page: detailed academic achievements with external links. -->
+<!-- Performance page: product releases and academic achievements with external links. -->
 <script lang="ts">
 	import { FileText, Youtube, ExternalLink, Award, Calendar } from '@lucide/svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
@@ -24,10 +24,10 @@
 	<title>Performance - OHMURA Senna</title>
 	<meta
 		name="description"
-		content="大村瀬奈の研究業績・学会発表。Sunrise mainnet launch, 日銀グランプリ、SFERS 2019、UBRI Connect 2021。"
+		content="大村瀬奈のプロダクトリリース・研究業績・学会発表。AI Talent Mapping、D6E リリース、Sunrise mainnet launch、日銀グランプリ、SFERS 2019、UBRI Connect 2021。"
 	/>
 	<meta property="og:title" content="Performance - OHMURA Senna" />
-	<meta property="og:description" content="Research achievements: Sunrise blockchain launch, BOJ Grand Prix, SFERS 2019, UBRI Connect 2021." />
+	<meta property="og:description" content="Product releases and research achievements: AI Talent Mapping, D6E launch, Sunrise blockchain launch, BOJ Grand Prix, SFERS 2019, UBRI Connect 2021." />
 	<meta property="og:url" content="https://senna46.com/performance" />
 </svelte:head>
 
@@ -35,7 +35,7 @@
 	<div class="mb-10">
 		<h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Performance</h1>
 		<p class="text-muted-foreground mt-3">
-			これまでに行った研究や学会発表を紹介しています。
+			これまでに関わったプロダクトのリリースや、研究・学会発表を紹介しています。
 		</p>
 	</div>
 

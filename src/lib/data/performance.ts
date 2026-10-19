@@ -1,5 +1,5 @@
-// Academic performance and research achievement data.
-// Contains details of presentations, awards, and publications.
+// Performance data: product releases, academic presentations, awards, and publications.
+// performanceSummary is shown on the Home page; performances is shown on the Performance page.
 
 export interface PerformanceLink {
 	label: string;
@@ -17,6 +17,8 @@ export interface PerformanceEntry {
 }
 
 export const performanceSummary = [
+	'2026/04/15 AI Talent Mapping 公開 (開発に参画)',
+	'2026/02/24 AI業務自動化プラットフォーム D6E リリース',
 	'2025/08/04 Sunrise ブロックチェーン メインネットリリース',
 	'2021/10/11 UBRI Connect 2021',
 	'2019/11/23 第15回 日銀グランプリ 敢闘賞',
@@ -24,6 +26,50 @@ export const performanceSummary = [
 ];
 
 export const performances: PerformanceEntry[] = [
+	{
+		id: 'ai-talent-mapping',
+		date: '2026/04/15',
+		title: 'AI Talent Mapping 公開',
+		subtitle: '称賛データから“隠れた才能”を発掘する AI 人材分析サービス',
+		description: [
+			'開発に参画した「AI Talent Mapping」が、南青山アドバイザリーグループ株式会社より公開されました。',
+			'従業員の称賛 (レコグニション) データを AI で解析し、特定のポジションへの適合性、組織図に現れない非公式ネットワークの中心人物、次世代リーダー候補といったシグナルを可視化するサービスです。'
+		],
+		links: [
+			{
+				label: 'プレスリリース (PR TIMES)',
+				url: 'https://prtimes.jp/main/html/rd/p/000000093.000033965.html',
+				type: 'external'
+			},
+			{
+				label: '掲載記事 (東京新聞デジタル)',
+				url: 'https://adv.tokyo-np.co.jp/prtimes/article143899/',
+				type: 'external'
+			}
+		]
+	},
+	{
+		id: 'd6e-release',
+		date: '2026/02/24',
+		title: 'AI業務自動化プラットフォーム D6E リリース',
+		subtitle: '業務フローを、AIで自動化。',
+		description: [
+			'オンプレミスやプライベートクラウドにデプロイして使う AI 業務自動化プラットフォーム「D6E」をリリースしました。',
+			'自然言語の指示をもとに、AI エージェントがデータ処理、ワークフロー実行、SaaS との連携、Excel・PDF・PowerPoint のレポート生成を行います。'
+		],
+		links: [
+			{
+				label: 'D6E Website',
+				url: 'https://www.d6e.ai/ja-JP',
+				type: 'external'
+			},
+			{
+				label: 'GitHub',
+				url: 'https://github.com/d6e-ai',
+				type: 'external'
+			}
+		]
+	},
 	{
 		id: 'sunrise-mainnet',
 		date: '2025/08/04',
