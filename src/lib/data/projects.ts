@@ -72,7 +72,7 @@ export const projects: Project[] = [
 		name: 'D6E-AI',
 		description: 'AI workflow automation platform for enterprises',
 		longDescription:
-			'D6E is an AI workflow automation platform released in February 2026. It is deployed on-premises or in a private cloud, so business data stays inside the customer environment. Users give instructions in natural language, and AI agents handle data processing, workflow execution, integration with SaaS such as freee, Money Forward, Google Workspace and Salesforce, and report generation in Excel, PDF and PowerPoint. Docker STFs (State Transition Functions) run custom business logic as containerized workflow steps, and Plugins package prompts, functions and workflows for one-click installation. Every feature is available through a public API and MCP. The core platform is proprietary, while setup tools, documentation, Agent Skills and Plugins are published as open source.',
+			'D6E is an AI workflow automation platform released in February 2026. It is deployed on-premises or in a private cloud. Users give instructions in natural language, and AI agents handle data processing, workflow execution, integration with SaaS such as freee, Money Forward, Google Workspace and Salesforce, and report generation in Excel, PDF and PowerPoint. Docker STFs (State Transition Functions) run custom business logic as containerized workflow steps, and Plugins package prompts, functions and workflows. Every feature is available through a public API and MCP. The core platform is proprietary, while setup tools, documentation, Agent Skills and Plugins are published as open source.',
 		tags: ['Python', 'Docker', 'AI', 'Agent Skills', 'MCP'],
 		links: [
 			{ label: 'Website', url: 'https://www.d6e.ai/ja-JP', type: 'website' },
