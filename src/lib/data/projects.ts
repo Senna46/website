@@ -70,12 +70,14 @@ export const projects: Project[] = [
 	{
 		id: 'd6e-ai',
 		name: 'D6E-AI',
-		description: 'AI-powered business efficiency application platform',
+		description: 'AI workflow automation platform for enterprises',
 		longDescription:
-			'D6E is a platform for building AI-driven workflow automation. Docker STFs (Serverless Task Functions) execute as containerized workflow steps, enabling custom data processing and business logic. The main application is proprietary, with Agent Skills published as open source.',
-		tags: ['Python', 'Docker', 'AI', 'Agent Skills'],
+			'D6E is an AI workflow automation platform released in February 2026. It is deployed on-premises or in a private cloud, so business data stays inside the customer environment. Users give instructions in natural language, and AI agents handle data processing, workflow execution, integration with SaaS such as freee, Money Forward, Google Workspace and Salesforce, and report generation in Excel, PDF and PowerPoint. Docker STFs (State Transition Functions) run custom business logic as containerized workflow steps, and Plugins package prompts, functions and workflows for one-click installation. Every feature is available through a public API and MCP. The core platform is proprietary, while setup tools, documentation, Agent Skills and Plugins are published as open source.',
+		tags: ['Python', 'Docker', 'AI', 'Agent Skills', 'MCP'],
 		links: [
+			{ label: 'Website', url: 'https://www.d6e.ai/ja-JP', type: 'website' },
 			{ label: 'GitHub', url: 'https://github.com/d6e-ai', type: 'github' },
+			{ label: 'Docs', url: 'https://docs.d6e.ai', type: 'docs' },
 			{
 				label: 'skills.sh',
 				url: 'https://skills.sh/d6e-ai/d6e-docker-stf-skills/d6e-docker-stf-development',
@@ -84,11 +86,61 @@ export const projects: Project[] = [
 		],
 		repositories: [
 			{
+				name: 'd6e-setup',
+				description:
+					'Configuration files, Docker Compose, and database schema for deploying D6E platform instances',
+				language: 'PLpgSQL',
+				url: 'https://github.com/d6e-ai/d6e-setup'
+			},
+			{
+				name: 'd6e-docs',
+				description: 'D6E developer documentation published at docs.d6e.ai',
+				language: 'MDX',
+				url: 'https://github.com/d6e-ai/d6e-docs'
+			},
+			{
+				name: 'd6e-setup-skills',
+				description: 'Agent Skills for deploying and configuring D6E platform instances',
+				language: 'Markdown',
+				url: 'https://github.com/d6e-ai/d6e-setup-skills'
+			},
+			{
 				name: 'd6e-docker-stf-skills',
 				description:
 					'Agent Skills for Claude Code and Cursor to create D6E Docker STF workflow steps',
-				language: 'Python',
+				language: 'Markdown',
 				url: 'https://github.com/d6e-ai/d6e-docker-stf-skills'
+			},
+			{
+				name: 'd6e-plugin-skills',
+				description: 'Agent Skills for developing and publishing D6E Plugin packages',
+				language: 'Markdown',
+				url: 'https://github.com/d6e-ai/d6e-plugin-skills'
+			},
+			{
+				name: 'd6e-plugin-registry',
+				description: 'Registry and discovery pipeline for D6E Plugins',
+				language: 'JavaScript',
+				url: 'https://github.com/d6e-ai/d6e-plugin-registry'
+			},
+			{
+				name: 'd6e-docker-stf-finance',
+				description: 'Docker STF suite for finance and accounting workflows on D6E',
+				language: 'Python',
+				url: 'https://github.com/d6e-ai/d6e-docker-stf-finance'
+			},
+			{
+				name: 'd6e-docker-stf-legal',
+				description: 'Docker STF suite for legal workflows on D6E',
+				language: 'Python',
+				url: 'https://github.com/d6e-ai/d6e-docker-stf-legal'
+			},
+			{
+				name: 'd6e-plugin-invoice-jp',
+				description:
+					'Japanese Qualified Invoice document generator plugin that outputs PDF and Word files',
+				language: 'JavaScript',
+				url: 'https://github.com/d6e-ai/d6e-plugin-invoice-jp'
 			}
 		]
 	},
@@ -97,7 +149,7 @@ export const projects: Project[] = [
 		name: 'CauchyE',
 		description: 'Blockchain and AI application development company',
 		longDescription:
-			'CauchyE, Inc. is a Japan-based technology company specializing in blockchain infrastructure and AI application development. Most repositories are private, with select projects published as open source.',
+			'CauchyE is a technology group specializing in blockchain infrastructure and AI application development, operating as CauchyE, Inc. in Japan and CAUCHYE ASIA PTE. LTD. in Singapore. Most repositories are private, with select projects published as open source.',
 		tags: ['TypeScript', 'Blockchain', 'AI'],
 		links: [{ label: 'GitHub', url: 'https://github.com/cauchye', type: 'github' }],
 		repositories: [
